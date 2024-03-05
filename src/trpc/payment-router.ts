@@ -55,7 +55,7 @@ export const paymentRouter = router({
       })
 
       line_items.push({
-        price: 'price_1Or4NjSEjBtPPxQ9xw9aaWWs',
+        price: 'price_1Or5FpSEjBtPPxQ9c2Paaafx',
         quantity: 1,
         adjustable_quantity: {
           enabled: false,
@@ -67,7 +67,7 @@ export const paymentRouter = router({
           await stripe.checkout.sessions.create({
             success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
             cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,
-            payment_method_types: ['card', 'paypal'],
+            payment_method_types: ['card'],
             mode: 'payment',
             metadata: {
               userId: user.id,
